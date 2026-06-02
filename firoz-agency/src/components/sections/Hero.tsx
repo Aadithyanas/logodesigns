@@ -46,7 +46,7 @@ export default function Hero() {
           {["WE THINK", "CRAFT AND", "DESIGN"].map((line, i) => (
             <div key={i} className="hero-line overflow-hidden">
               <div className="hero-line-inner">
-                <h1 className="heading-massive text-[15vw] md:text-[14vw] lg:text-[13vw] text-foreground">
+                <h1 className="heading-massive text-[15vw] md:text-[14vw] lg:text-[13vw] font-black leading-[0.85] text-foreground">
                   {line}
                 </h1>
               </div>

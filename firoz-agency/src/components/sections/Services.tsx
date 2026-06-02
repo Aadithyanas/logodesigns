@@ -23,21 +23,10 @@ export default function Services() {
       // Heading char animation
       const heading = headingRef.current;
       if (heading) {
-        const text = heading.textContent || "";
-        heading.innerHTML = "";
-        text.split("").forEach((char) => {
-          const span = document.createElement("span");
-          span.className = "animated-char";
-          span.textContent = char === " " ? "\u00A0" : char;
-          heading.appendChild(span);
-        });
-        heading.classList.add("gsap-ready");
-
         const chars = heading.querySelectorAll(".animated-char");
-        gsap.set(chars, { yPercent: 150, display: "inline-block" });
-
         gsap.to(chars, {
           yPercent: 0,
+          y: 0,
           stagger: 0.02,
           duration: 1.4,
           ease: "power4.out",
@@ -76,7 +65,12 @@ export default function Services() {
           >
             Our expertise
           </h2>
-          <p className="text-mono opacity-50">Services & capabilities</p>
+          <div className="max-w-xs md:max-w-sm lg:max-w-md">
+            <p className="text-mono opacity-50 mb-3">Services & capabilities</p>
+            <p className="text-sm md:text-base font-sans text-foreground/70 leading-relaxed">
+              We provide unique, custom logo designs and complete brand strategies that give your business a premium identity and help you stand out.
+            </p>
+          </div>
         </div>
 
         {/* Service list */}
