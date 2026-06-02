@@ -24,14 +24,16 @@ export default function Services() {
       const heading = headingRef.current;
       if (heading) {
         const chars = heading.querySelectorAll(".animated-char");
-        gsap.to(chars, {
-          yPercent: 0,
-          y: 0,
-          stagger: 0.02,
-          duration: 1.4,
-          ease: "power4.out",
-          scrollTrigger: { trigger: heading, start: "top 90%" },
-        });
+        gsap.fromTo(chars,
+          { yPercent: 100 },
+          {
+            yPercent: 0,
+            stagger: 0.03,
+            duration: 1.2,
+            ease: "power4.out",
+            scrollTrigger: { trigger: heading, start: "top 90%" },
+          }
+        );
       }
 
       // Service rows stagger in
@@ -61,9 +63,16 @@ export default function Services() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-4">
           <h2
             ref={headingRef}
-            className="heading-display heading-appear text-[8vw] md:text-[6vw] text-foreground"
+            className="heading-display text-[8vw] md:text-[6vw] text-foreground overflow-hidden py-1"
           >
-            Our expertise
+            {"Our expertise".split("").map((char, index) => (
+              <span
+                key={index}
+                className="animated-char inline-block"
+              >
+                {char === " " ? "\u00A0" : char}
+              </span>
+            ))}
           </h2>
           <div className="max-w-xs md:max-w-sm lg:max-w-md">
             <p className="text-mono opacity-50 mb-3">Services & capabilities</p>
