@@ -39,7 +39,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="home" className="relative min-h-[80vh] md:min-h-screen flex flex-col justify-start md:justify-center pt-40 md:pt-20 pb-36 md:pb-0 overflow-hidden">
+    <section ref={sectionRef} id="home" className="relative md:min-h-screen flex flex-col justify-start md:justify-center pt-32 md:pt-20 pb-12 md:pb-0 overflow-hidden">
       <div className="px-6 lg:px-10 relative z-10">
         {/* MASSIVE CENTERED HEADING */}
         <div ref={headingRef} className="text-center">
@@ -73,20 +73,6 @@ export default function Hero() {
               Book a Consultation →
             </a>
           </div>
-        </div>
-      </div>
-
-      {/* Scrolling Marquee at the bottom */}
-      <div className="absolute bottom-6 md:bottom-12 left-0 w-full flex whitespace-nowrap opacity-10 pointer-events-none">
-        <div className="animate-marquee flex items-center gap-8">
-          {[...Array(2)].map((_, i) => (
-            <div key={i} className="flex items-center gap-8">
-              <span className="heading-massive text-5xl md:text-8xl">LOGO DESIGN</span>
-              <span className="heading-massive text-5xl md:text-8xl text-transparent [-webkit-text-stroke:1px_var(--foreground)] md:[-webkit-text-stroke:2px_var(--foreground)]">BRAND IDENTITY</span>
-              <span className="heading-massive text-5xl md:text-8xl">STRATEGY</span>
-              <span className="heading-massive text-5xl md:text-8xl text-transparent [-webkit-text-stroke:1px_var(--foreground)] md:[-webkit-text-stroke:2px_var(--foreground)]">MOCKUPS</span>
-            </div>
-          ))}
         </div>
       </div>
     </section>
