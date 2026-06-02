@@ -303,3 +303,19 @@ html.is-dark .visual-overlay {
     font-size: 0.65rem;
   }
 }
+
+/* ===================================
+   MARQUEE ANIMATION
+   =================================== */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
