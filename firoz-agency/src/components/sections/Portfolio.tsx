@@ -115,7 +115,7 @@ export default function Portfolio() {
         <div className="mb-12 md:mb-20">
           <h2
             ref={headingRef}
-            className="text-[14vw] md:text-[9vw] font-black uppercase leading-none tracking-tighter text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.7)] md:[-webkit-text-stroke:2px_rgba(255,255,255,0.7)]"
+            className="text-[14vw] md:text-[9vw] font-black uppercase leading-none tracking-tighter text-transparent [-webkit-text-stroke:1px_var(--foreground)] md:[-webkit-text-stroke:2px_var(--foreground)]"
             style={{ fontFamily: "'Anton', sans-serif" }}
           >
             SOLUTIONS
