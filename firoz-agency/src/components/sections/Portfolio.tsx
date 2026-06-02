@@ -122,7 +122,7 @@ export default function Portfolio() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="columns-2 lg:columns-3 gap-3 sm:gap-6 md:gap-8">
           {projects.map((project, i) => {
             const isRed = i % 2 !== 0;
             return (
@@ -131,7 +131,7 @@ export default function Portfolio() {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="gallery-card group relative w-full aspect-[3/4] overflow-hidden cursor-pointer bg-[#0a0a0a] block border border-white/5"
+                className={`gallery-card group relative w-full overflow-hidden cursor-pointer bg-[#0a0a0a] block border border-white/5 break-inside-avoid mb-3 sm:mb-6 md:mb-8 ${project.layout === 'tall' ? 'aspect-[3/4]' : 'aspect-square'}`}
               >
                 {/* Image */}
                 <Image
@@ -151,14 +151,14 @@ export default function Portfolio() {
 
                 {/* Vertical Text */}
                 <div 
-                  className="absolute top-6 bottom-6 right-4 text-white text-left font-black uppercase text-4xl md:text-[2.75rem] leading-[0.85] tracking-tight flex items-start justify-start"
+                  className="absolute top-3 bottom-3 right-2 sm:top-6 sm:bottom-6 sm:right-4 text-white text-left font-black uppercase text-xl sm:text-3xl md:text-[2.75rem] leading-[0.85] tracking-tight flex items-start justify-start"
                   style={{ writingMode: 'vertical-rl', textOrientation: 'mixed', fontFamily: "'Anton', sans-serif" }}
                 >
                   {project.title}
                 </div>
                 
                 {/* Bottom left small details */}
-                <div className="absolute bottom-6 left-6 text-white/50 text-xs md:text-sm font-mono tracking-widest uppercase flex flex-col gap-1">
+                <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 text-white/50 text-[10px] sm:text-xs md:text-sm font-mono tracking-widest uppercase flex flex-col gap-0.5 sm:gap-1">
                   <span className="text-white font-bold">{project.tagline}</span>
                   <span>{project.likes} LIKES</span>
                 </div>
