@@ -39,7 +39,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="home" className="relative min-h-screen flex flex-col justify-center pt-20">
+    <section ref={sectionRef} id="home" className="relative min-h-screen flex flex-col justify-start md:justify-center pt-40 md:pt-20 pb-20 md:pb-0">
       <div className="px-6 lg:px-10 relative z-10">
         {/* MASSIVE CENTERED HEADING */}
         <div ref={headingRef} className="text-center">
