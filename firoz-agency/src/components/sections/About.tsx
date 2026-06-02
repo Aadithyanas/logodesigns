@@ -47,6 +47,16 @@ export default function About() {
           }
         );
       });
+
+      gsap.utils.toArray<HTMLElement>(".simple-appear").forEach((el) => {
+        gsap.fromTo(el,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 0.8, y: 0, duration: 1.2, ease: "power3.out",
+            scrollTrigger: { trigger: el, start: "top 92%" },
+          }
+        );
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -95,7 +105,7 @@ export default function About() {
         <div className="mt-20 md:mt-28 max-w-3xl">
           <p className="mono-reveal text-mono opacity-50 mb-6">What we offer</p>
           <p className="simple-appear text-xl md:text-2xl leading-relaxed font-sans opacity-80">
-            We create unique and professional logo designs that give your brand a premium identity. From concept to final delivery — 5 logo samples, 5 rounds of changes, all non-copyrighted original work. Available for freelance projects worldwide.
+            We provide unique, custom logo designs that give your brand a premium identity. From concept to final delivery — 5 logo samples, 5 rounds of changes, all non-copyrighted original work. Available for freelance projects worldwide.
           </p>
         </div>
       </div>
