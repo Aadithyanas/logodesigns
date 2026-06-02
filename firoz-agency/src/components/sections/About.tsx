@@ -38,6 +38,22 @@ export default function About() {
         );
       });
 
+      gsap.utils.toArray<HTMLElement>(".stat-number").forEach((el) => {
+        const targetText = el.getAttribute("data-target") || "0";
+        const targetNumber = parseInt(targetText.replace(/,/g, ""), 10);
+        const obj = { val: 0 };
+        
+        gsap.to(obj, {
+          val: targetNumber,
+          duration: 2,
+          ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 90%" },
+          onUpdate: () => {
+            el.innerText = Math.floor(obj.val).toLocaleString();
+          }
+        });
+      });
+
       gsap.utils.toArray<HTMLElement>(".mono-reveal").forEach((el) => {
         gsap.fromTo(el,
           { opacity: 0, y: 20, scale: 0.95 },
@@ -95,9 +111,9 @@ export default function About() {
             { label: "Following", value: "7,485" },
             { label: "Highlights", value: "9" },
           ].map((stat, i) => (
-            <div key={i} className="stat-item">
+            <div key={i} className="stat-item flex flex-col items-center text-center">
               <p className="text-mono opacity-40 mb-3">{stat.label}</p>
-              <p className="heading-massive text-4xl md:text-5xl">{stat.value}</p>
+              <p className="stat-number heading-massive text-4xl md:text-5xl" data-target={stat.value}>{stat.value}</p>
             </div>
           ))}
         </div>
